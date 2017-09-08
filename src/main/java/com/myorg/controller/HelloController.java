@@ -1,9 +1,8 @@
 package com.myorg.controller;
 
-import com.myorg.dao.HouseDaoImpl;
+import com.myorg.dao.impl.HouseDaoImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -16,7 +15,9 @@ public class HelloController {
     private HouseDaoImpl houseDao;
 
     @RequestMapping(value="/2")
-    public String printWelcome () {
-        return "welcome";
+    public ModelAndView printWelcome () {
+        ModelAndView modelAndView = new ModelAndView("welcome");
+        modelAndView.addObject("houses", houseDao.findAll());
+        return modelAndView;
     }
 }

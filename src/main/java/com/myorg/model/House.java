@@ -25,8 +25,12 @@ public class House {
     @Column(name="building_address")
     private String address;
 
+    public House() {
+    }
+
     public House(int id, String name, int price, String status, String address) {
         this.id = id;
+
         this.name = name;
         this.price = price;
         this.status = status;

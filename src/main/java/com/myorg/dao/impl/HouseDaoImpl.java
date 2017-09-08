@@ -1,4 +1,4 @@
-package com.myorg.dao;
+package com.myorg.dao.impl;
 
 import com.myorg.model.House;
 import org.hibernate.SessionFactory;
@@ -10,16 +10,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Repository
-public class HouseDaoImpl extends HibernateDaoSupport{
+public class HouseDaoImpl extends BaseDaoImpl<House> {
 
-    @Autowired
-    public void setSessionFacotry(SessionFactory sessionFacotry) {
-        super.setSessionFactory(sessionFacotry);
-    }
-
-    public List<House> findAll() {
-        String hql = "from House";
-        List<House> houses = (List<House>) getHibernateTemplate().find(hql);
-        return houses;
-    }
 }
