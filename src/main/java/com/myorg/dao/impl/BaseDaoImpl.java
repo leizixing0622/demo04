@@ -3,6 +3,8 @@ package com.myorg.dao.impl;
 import com.myorg.dao.BaseDao;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
@@ -30,34 +32,40 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
     }
 
     public void insert(T entity) {
-
+        getHibernateTemplate().save(entity);
     }
 
     public void update(T entity) {
-
+        getHibernateTemplate().update(entity);
     }
 
     public void delete(T entity) {
-
-    }
-
-    public void deleteAll(Collection<T> entities) {
-
+        getHibernateTemplate().delete(entity);
     }
 
     public T findOneById(Integer id) {
-        return null;
+        return getHibernateTemplate().get(entityClassName, id);
     }
 
     public T findOneByName(String name) {
+        DetachedCriteria detachedCriteria = DetachedCriteria.forClass(entityClass);
+        detachedCriteria.add(Restrictions.eq("name", entityClassName));
+        List<T> tList = getHibernateTemplate().findByCriteria(detachedCriteria);
+        if (tList != null) {
+            return tList.get(0);
+        }
         return null;
     }
 
     public int countAll() {
+        List<Long> longs = getHibernateTemplate().find("select count(*) from " + entityClassName);
+        if (longs != null) {
+            return longs.get(0).intValue();
+        }
         return 0;
     }
 
-    public int conditionCount(Criterion criterion) {
+    public int conditionCount(Criterion... criterion) {
         return 0;
     }
 

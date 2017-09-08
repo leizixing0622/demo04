@@ -13,8 +13,6 @@ public interface BaseDao<T> {
 
     public void delete(T entity);
 
-    public void deleteAll(Collection<T> entities);
-
     public T findOneById(Integer id);
 
     public T findOneByName(String name);
