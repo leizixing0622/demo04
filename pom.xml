@@ -73,7 +73,38 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
         </dependency>
-
+        <!--一些工具包-->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.13</version>
+        </dependency>
+        <!--json转换相关的包-->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20140107</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>leizixing</finalName>

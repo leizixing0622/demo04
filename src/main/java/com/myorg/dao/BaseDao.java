@@ -19,18 +19,14 @@ public interface BaseDao<T> {
 
     public int countAll();
 
-    public int conditionCount(Criterion criterion);
-
-    public int countBySQL(String sql);
+    public int conditionCount(Criterion... criterions);
 
     public List<T> findAll();
 
-    public List<T> findAllByHQL();
-
-    public List<T> conditionFindAll(Criterion criterion);
+    public List<T> conditionFindAll(Criterion... criterions);
 
     public List<T> findByPage(int pageNumber, int pageSize);
 
-    public List<T> conditionFindByPage(int pageNumber, int pageSize, Criterion criterion);
+    public List<T> conditionFindByPage(int pageNumber, int pageSize, Criterion... criterions);
 
 }
