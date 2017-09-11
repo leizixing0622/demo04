@@ -9,9 +9,11 @@
     <![endif]-->
     <meta http-equiv="X-UA-Compatible" content="edge" />
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.webui-popover.css">
     <script src="/js/jquery-1.8.3.min.js"></script>
     <script src="/js/jquery.fly.min.js"></script>
     <script src="/js/public.js"></script>
+    <script src="/js/jquery.webui-popover.js"></script>
     <!--[if lte IE 9]>
     </script><script src="/js/ie9.js"></script>
     <![endif]-->
@@ -20,6 +22,11 @@
     <script>document.createElement("search")</script>
     <script>document.createElement("light")</script>
     <script>document.createElement("light1")</script>
+    <style>
+        .webui-popover-content a{
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
 <!--最大的背景-->
@@ -33,8 +40,15 @@
         </div>
         <div class="register_login">
             <em>喵,欢迎来到天猫</em>
-            <a href="/login">请登录</a>
-            <a href="/login">免费注册</a>
+            <c:choose>
+                <c:when test="${username == null}">
+                    <a href="/login">请登录</a>
+                    <a href="/login">免费注册</a>
+                </c:when>
+                <c:otherwise>
+                    <a id="username" href="#">${username}</a>
+                </c:otherwise>
+            </c:choose>
         </div>
         <div class="vip_center">
             <a href="#">会员中心</a>
@@ -625,8 +639,14 @@
         $(".advertisement").animate({'top': '30', 'opacity': '1'}, 200)
         $(".flexslider").animate({'margin-top': '0'}, 200)
         $("aside").animate({'top': '30', 'opacity': '1'}, 200)
-        $("top").animate({'margin-top': '-400'}, 1000)
-
+        $("top").animate({'margin-top': '-400'}, 1000);
+        if($("#username")) {
+            $("#username").webuiPopover({
+                content: '<a href="/login/logout">退出</a>',
+                trigger: 'hover',
+                width: 66
+            });
+        }
     }
 </script>
 <!--楼层分布图-->

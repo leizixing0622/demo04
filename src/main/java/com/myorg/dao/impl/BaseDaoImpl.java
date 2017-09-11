@@ -6,14 +6,17 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.*;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
-import javax.persistence.Query;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
 
@@ -49,15 +52,26 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
         return (T) getHibernateTemplate().get(entityClassName, id);
     }
 
-    public T findOneByName(String name) {
-        DetachedCriteria criteria = DetachedCriteria.forClass(entityClass);
-        criteria.add(Restrictions.like("name", ""));
-        List<T> tList = (List<T>) getHibernateTemplate().findByCriteria(criteria);
-        System.out.println(tList);
-        if (tList.size() != 0) {
-            return tList.get(0);
+    public T findOneByName(final String name) {
+        if(name == null || name.length() == 0) {
+            return null;
+        }else {
+            StringBuffer buffer = new StringBuffer();
+            buffer.append("from " + entityClassName + " where 1 = 1");
+            buffer.append(" and name = :name");
+            final String s = new String(buffer);
+            return (T) getHibernateTemplate().execute(new HibernateCallback() {
+                public Object doInHibernate(Session session) throws HibernateException {
+                    Query query = session.createQuery(s);
+                    query.setString("name", name);
+                    if(query.list().size() == 0) {
+                        return null;
+                    }else {
+                        return query.list().get(0);
+                    }
+                }
+            });
         }
-        return null;
     }
 
     public int countAll() {

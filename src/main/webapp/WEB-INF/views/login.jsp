@@ -28,8 +28,7 @@
                                 $("div.loginErrorMessageDiv").show();
                                 break;
                             case "1":
-                                $("span.errorMessage").html("登陆成功");
-                                $("div.loginErrorMessageDiv").show();
+                                window.location.href="/index";
                                 break;
                             case "2":
                                 $("span.errorMessage").html("此账号不存在");

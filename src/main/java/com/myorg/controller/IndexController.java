@@ -8,14 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/index")
-public class IndexController {
+public class IndexController extends BaseController {
 
     @RequestMapping("")
-    public ModelAndView goIndex () {
+    public ModelAndView goIndex (HttpServletRequest httpServletRequest) {
         ModelAndView mv = new ModelAndView("index");
+        HttpSession session = httpServletRequest.getSession();
+        if(getSessionUser(httpServletRequest) != null) {
+            mv.addObject("username", getSessionUser(httpServletRequest).getName());
+        }
         return mv;
     }
 }
