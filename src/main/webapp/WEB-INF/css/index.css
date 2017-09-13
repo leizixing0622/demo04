@@ -47,20 +47,22 @@ search button:hover{ background:#eb4e01}
 .dao_list a{ display:block; float:left; font-size:14px;color:#fff; padding-left:15px; padding-right:15px; line-height:30px; height:30px; position:relative; margin-right:10px}
 .dao_list a:hover{ background:#cc2c02}
 .dao_list a.color{ background:#cc2c02; color:#fff}
-aside{ width:210px; height:500px; background:rgba(255,255,255,0.8); position:absolute;top:-480px; left:0;display:block; z-index:2000; opacity:0; box-shadow:0 0 6px rgba(0,0,0,0.3)}
+aside{ width:210px; height:auto; background:rgba(255,255,255,0.8); position:absolute;top:-480px; left:0;display:block; z-index:2000; opacity:0; box-shadow:0 0 6px rgba(0,0,0,0.3)}
 .import_list{ box-shadow:0 0 6px rgba(0,0,0,0.3)}
 aside ul li.yanses{ background:rgba(235,78,1,0.2)} 
 /*.important:hover aside{display:block}内页要打开*/
-aside ul li{ overflow:hidden; margin-top:10px}
+aside ul li{ overflow:hidden; padding: 5px;}
 aside ul li.li_color{ background:}
 aside ul li h3{ font-size:14px; color:#000; text-indent:10px; font-weight:100; height:30px; line-height:30px}
 aside ul li p{display:block; width:200px; height:auto;margin-left:10px}
 aside ul li p a{ display:block; font-size:14px; line-height:20px; float:left; padding-right:10px;color:#666}
 aside ul li p a:hover{color:#eb4e01}
-.import_list{ width:729px; height:498px; position:absolute; top:30px; left:210px;display:none; background:#FFF; z-index:3000}
-.import_list dt{ font-size:14px; color:#000; line-height:30px;height:30px; margin-top:7px; text-indent:20px}
-.import_list dd{ margin-left:20px; border-bottom:1px dashed #f3f3f3}
-.import_list dd a{ font-size:14px; color:#666; padding-left:6px; padding-right:6px}
+.import_list{ width:940px; height:auto; position:absolute; top:30px; left:210px;display:none; background:#FFF; z-index:3000}
+.import_list a.logo{width: 40%;height:50px;margin: 0;float: left;display:inline-block;padding:10px;}
+.import_list a.logo img{width:100%;height:100%;margin:0px;}
+.import_list dt{ font-size:14px; font-weight: bold; color:#000; line-height:30px;height:30px; margin-top:7px; text-indent:20px;}
+.import_list dd{ margin-left:20px; border-bottom:1px dashed #f3f3f3; display: inline-block; padding-left: 60px;}
+.import_list dd a{ font-size:14px; color:#666; padding-left:6px; padding-right:6px; float:left;}
 .import_list dd a:hover{ color:#eb4e01}
 .advertisement{ width:250px; height:500px; position:absolute; top:-480px;right:0; z-index:3000;background:#fff; opacity:0}
 .advertisement h4{ font-size:14px; color:#333; font-weight:100; line-height:50px; border-bottom:1px dashed #cccccc; width:230px; margin:0 auto}

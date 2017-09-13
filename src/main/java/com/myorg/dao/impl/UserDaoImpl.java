@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 
-@Repository()
+@Repository
 public class UserDaoImpl extends BaseDaoImpl<User> {
 
 

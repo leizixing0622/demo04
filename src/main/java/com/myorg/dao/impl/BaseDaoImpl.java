@@ -108,6 +108,19 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T> {
         return (List<T>) getHibernateTemplate().findByCriteria(criteria);
     }
 
+    public List<T> findAllByHQL(final String hql, final Object... params) {
+        List<T> ts = getHibernateTemplate().execute(new HibernateCallback<List<T>>() {
+            public List<T> doInHibernate(Session session) throws HibernateException {
+                Query query = session.createQuery(hql);
+                for(int i = 0; params != null && i < params.length; i ++){
+                    query.setParameter(i, params[i]);
+                }
+                return query.list();
+            }
+        });
+        return ts;
+    }
+
     public List<T> findByPage(final int pageNumber, final int pageSize) {
         List<T> ts = getHibernateTemplate().execute(new HibernateCallback<List<T>>() {
             public List<T> doInHibernate(Session session) throws HibernateException {

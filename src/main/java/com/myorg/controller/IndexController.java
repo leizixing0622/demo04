@@ -1,6 +1,7 @@
 package com.myorg.controller;
 
 import com.myorg.dao.impl.UserDaoImpl;
+import com.myorg.service.impl.CategoryServiceImpl;
 import com.myorg.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/index")
 public class IndexController extends BaseController {
 
+    @Autowired
+    private CategoryServiceImpl categoryService;
+
     @RequestMapping("")
     public ModelAndView goIndex (HttpServletRequest httpServletRequest) {
         ModelAndView mv = new ModelAndView("index");
@@ -22,6 +26,7 @@ public class IndexController extends BaseController {
         if(getSessionUser(httpServletRequest) != null) {
             mv.addObject("username", getSessionUser(httpServletRequest).getName());
         }
+        mv.addObject("categorylist", categoryService.getCategoryList());
         return mv;
     }
 }

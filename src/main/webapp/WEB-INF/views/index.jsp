@@ -81,7 +81,7 @@
         <div class="advertisement">
             <h4>最新公告</h4>
             <div class="notice_new">
-                <p><a href="#">【优选】金秋聚会，买一送一</a></p>
+                <p><a href="#">【优选】<金秋></金秋>聚会，买一送一</a></p>
                 <p><a href="#">【优选】中秋嘉年华，好礼钜惠</a></p>
                 <p><a href="#">【优选】冰点破纪录，低价不猫腻</a></p>
                 <p><a href="#">【优选】开学季，“纸”想“净、净”学习</a></p>
@@ -105,73 +105,29 @@
         <div class="important"><img src="/images/all_list.png" style=" margin-top:8px">&nbsp;全部商品分类
             <aside>
                 <ul>
-                    <li class="cates" mt-ct="list01">
-                        <h3>卫生洁具</h3>
+                    <%--<li class="cates" mt-ct="list01">
                         <p>
                             <a href="#">洗衣粉</a>
                             <a href="#">马桶刷</a>
                             <a href="#">不锈钢龙头</a>
                             <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
                         </p>
-                    </li>
-                    <li class="cates" mt-ct="list02">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
-                    <li class="cates" mt-ct="list03">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
-                    <li class="cates" mt-ct="list04">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
-                    <li class="cates" mt-ct="list05">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
-                    <li class="cates" mt-ct="list06">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
-                    <li class="cates" mt-ct="list07">
-                        <h3>卫生洁具</h3>
-                        <p>
-                            <a href="#">洗衣粉</a>
-                            <a href="#">马桶刷</a>
-                            <a href="#">不锈钢龙头</a>
-                            <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
-                        </p>
-                    </li>
+                    </li>--%>
+                    <c:forEach var="category" items="${categorylist}" varStatus="status">
+                        <%--${status.count}：${category}--%>
+                        <li class="cates" mt-ct="list0${status.count}">
+                            <p>
+                                <a href="#">${category.hotWordCategory.getTitle1()}</a>
+                                <a href="#">${category.hotWordCategory.getTitle2()}</a>
+                                <a href="#">${category.hotWordCategory.getTitle3()}</a>
+                                <i style="font-family:'宋体';color:#666; line-height:23px; font-size:14px; float:left">></i>
+                            </p>
+                        </li>
+                    </c:forEach>
                 </ul>
             </aside>
             <div>
-                <div class="import_list b-list01">
+                <%--<div class="import_list b-list01">
                     <dt>与内容无关：</dt>
                     <dd>
                         <a href="#">T恤</a>
@@ -186,397 +142,28 @@
                         <a href="#">牛仔夹克</a>
                         <a href="#">迷彩风</a>
                     </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list02">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list03">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list04">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list05">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list06">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
-                <div class="import_list b-list07">
-                    <dt>与内容无关：</dt>
-                    <dd>
-                        <a href="#">T恤</a>
-                        <a href="#">休闲裤</a>
-                        <a href="#">条纹T</a>
-                        <a href="#">牛仔裤</a>
-                        <a href="#">针织运动裤</a>
-                        <a href="#">潮T</a>
-                        <a href="#">格子衬衫</a>
-                        <a href="#">村棉印花T恤</a>
-                        <a href="#">纯色衬衫</a>
-                        <a href="#">牛仔夹克</a>
-                        <a href="#">迷彩风</a>
-                    </dd>
-                </div>
+                </div>--%>
+                <c:forEach var="category" items="${categorylist}" varStatus="status">
+                    <div class="import_list b-list0${status.count}">
+                        <div style="display:inline-block;width:75%;float:left">
+                            <c:forEach var="hotwordtext" items="${category.hotWordText}" varStatus="status">
+                                <dt>${hotwordtext.hotWordTitle}</dt>
+                                <dd>
+                                    <c:forEach var="hotword" items="${hotwordtext.hotWord}" varStatus="status">
+                                        <a href="#">${hotword.getTitle()}</a>
+                                    </c:forEach>
+                                </dd>
+                            </c:forEach>
+                        </div>
+                        <div style="display:inline-block;width:25%;background:#eee">
+                            <c:forEach var="hotwordlogo" items="${category.hotWordLogo}" varStatus="status">
+                                <a class="logo">
+                                    <img src="/images/hotwordlogo/${hotwordlogo.getUrl()}.png" />
+                                </a>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </c:forEach>
             </div>
         </div>
         <!--结束-->

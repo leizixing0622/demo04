@@ -23,6 +23,8 @@ public interface BaseDao<T> {
 
     public List<T> findAll();
 
+    public List<T> findAllByHQL(String hql, Object... params);
+
     public List<T> conditionFindAll(Criterion... criterions);
 
     public List<T> findByPage(int pageNumber, int pageSize);
